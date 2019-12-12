@@ -37,8 +37,8 @@ public class ProductRepository extends GenericRepository<Product> implements IPr
     @Override
     public void Create(Product item) throws SQLException
     {
-        query = "INSERT INTO " + dbSet + " productName, productDescription, Price,  VendorId" +
-                "VALUES (?, ?, ?, ?, ?)";
+        query = "INSERT INTO " + dbSet + " (productName, productDescription, Price,  VendorId)" +
+                " VALUES (?, ?, ?, ?)";
         PreparedStatement ps = db.prepareStatement(query);
         ps.setString(1, item.getName());
         ps.setString(2, item.getDescription());

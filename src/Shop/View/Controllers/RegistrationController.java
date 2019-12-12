@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegistrationGUI
+public class RegistrationController
 {
     public TextField login;
     public TextField password;

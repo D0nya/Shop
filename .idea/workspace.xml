@@ -1,7 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2937257b-c2ac-4b71-8b7c-e1081e670048" name="Default Changelist" comment="" />
+    <list default="true" id="2937257b-c2ac-4b71-8b7c-e1081e670048" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/BLL/Services/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/OrderReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/View/GUI/AdminGUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/View/GUI/OrderReportGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Shop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Shop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/shopEER.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/Database/shopEER.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/BLL/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/BLL/Handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/BLL/Services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/BLL/Services/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/DB/DbContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/DB/DbContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Interfaces/IOrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Interfaces/IOrderRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Category_Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Category_Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Order_Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Models/Order_Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/CategoryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/OrderRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/VendorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/DAL/Repositories/VendorRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/Infrastructure/Client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/Infrastructure/Client/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/Infrastructure/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/Infrastructure/Server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/AuthorisationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/AuthorisationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/CartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/OrdersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/ProductsList$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/ProductsList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/Controllers/RegistrationGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/CartGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/CartGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/OrdersGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/OrdersGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/ProductsList.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/RegistrationGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shop/Shop/View/GUI/RegistrationGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/BLL/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/BLL/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/BLL/Services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/BLL/Services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/DB/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/DB/DbContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Interfaces/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Interfaces/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Models/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Models/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Models/Category_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Models/Category_Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Models/Order_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Models/Order_Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Repositories/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Repositories/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/DAL/Repositories/VendorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/DAL/Repositories/VendorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Infrastructure/Client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/Infrastructure/Client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Infrastructure/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/Infrastructure/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/Controllers/AuthorisationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/AuthorisationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/Controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/Controllers/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/Controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/Controllers/ProductsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/ProductsListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/Controllers/RegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/Controllers/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/GUI/CartGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/GUI/CartGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/GUI/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/GUI/MainMenuGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/GUI/OrdersGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/GUI/OrdersGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/GUI/ProductsList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/GUI/ProductsListGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/View/GUI/RegistrationGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/View/GUI/RegistrationGUI.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +79,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1UcH8gcCh9PkLfk44pd6FSB2LWP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -27,6 +97,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Dependencies/mysql-connector-java-8.0.18.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -49,9 +120,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerInit" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Shop.Infrastructure.Server.Server" />
+      <module name="Shop" />
+      <option name="PROGRAM_PARAMETERS" value="-init" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
+      <item itemvalue="Application.ServerInit" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -80,74 +160,78 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="330" y="243" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576086204619">
+    <state x="330" y="243" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576158545460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="330" y="243" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576086204619" />
+    <state x="330" y="243" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576158545460" />
     <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1575650648726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575650648726" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1576082697033">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1576173731790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576082697033" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576173731790" />
     <state x="689" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1575649219007">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575649219007" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575970610925">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576164731711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575970610925" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576164731711" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1576074601036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576074601036" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576087115963">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576176216422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115963" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576087115963">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576176216422" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576176216422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115963" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576087115963">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576176216422" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576176216422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115963" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576087115963">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576176216422" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576176216422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115963" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1576087115959">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576176216422" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1576166388400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115959" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1576087115959">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576166388400" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1576166388400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115959" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1576087115959">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576166388400" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1576166388400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115959" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1576087115959">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576166388400" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1576166388400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576087115959" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576166388400" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1576075640411">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1576075640411" />
+    <state x="681" y="261" width="540" height="524" key="StructurePopup" timestamp="1576161258130">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1576161258130" />
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1575649384590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1575649384590" />
-    <state x="603" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576082033657">
+    <state x="603" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1576160600123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="603" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576082033657" />
+    <state x="603" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576160600123" />
     <state x="342" y="140" key="new project wizard" timestamp="1575973856198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -156,5 +240,8 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="148" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575970741351" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Shop$Client.ic" NAME="Client Coverage Results" MODIFIED="1576166332501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

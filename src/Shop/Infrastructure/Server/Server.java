@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 
 public class Server
 {
@@ -18,6 +20,15 @@ public class Server
             String connectionString = "jdbc:mysql://localhost:3306/Shop?verifyServerCertificate=false" +
                     "&useSSL=false&requireSSL=false&useLegacyDateTimeCode=false&amp&serverTimezone=UTC";
             DbContext db = new DbContext(connectionString, "root", "root");
+            if(args.length > 0)
+            {
+                LinkedHashSet<String> argsSet = new LinkedHashSet<>(Arrays.asList(args));
+                for (String arg :
+                        argsSet) {
+                    if(arg.equals("-init"))
+                        db.Initialize();
+                }
+            }
             while (true)
             {
                 Socket client = ss.accept();

@@ -1,7 +1,5 @@
 package Shop.Infrastructure.Client;
 
-import Shop.DAL.Models.Cart;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +8,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Main extends Application
@@ -28,14 +24,13 @@ public class Main extends Application
     {
         try
         {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(new FileOutputStream("cart.json"), Client.getInstance().getCart());
             Client.getInstance().Close();
         } catch (IOException e)
         {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args)
     {
         launch(args);

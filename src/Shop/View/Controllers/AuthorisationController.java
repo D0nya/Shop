@@ -39,7 +39,7 @@ public class AuthorisationController
         {
             Customer customer = mapper.readValue(responseMessage.getObject(), Customer.class);
             Client.getInstance().setCustomer(customer);
-            Main.OpenScene("../../View/GUI/MainMenu.fxml", "Главная", null);
+            Main.OpenScene("../../View/GUI/MainMenuGUI.fxml", "Главная", null);
         }
     }
 

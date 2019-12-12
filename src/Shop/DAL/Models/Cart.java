@@ -31,4 +31,9 @@ public class Cart
         }
         return sum;
     }
+
+    public boolean isEmpty()
+    {
+        return products.isEmpty();
+    }
 }

@@ -1,9 +1,11 @@
 package Shop.View.Controllers;
 
-import Shop.DAL.Models.Cart;
-import Shop.DAL.Models.ProductAmount;
+import Shop.DAL.Models.*;
 import Shop.Infrastructure.Client.Client;
 import Shop.Infrastructure.Client.Main;
+import Shop.Infrastructure.Models.Message;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CartController {
 
@@ -23,10 +26,19 @@ public class CartController {
 
     public TextField changeAmount;
     private ProductAmount selected;
+    private Cart cart;
+    private Customer customer;
 
     @FXML
     public void initialize()
     {
+        try {
+            cart = Client.getInstance().getCart();
+            customer = Client.getInstance().getCustomer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         Product.setCellValueFactory(new PropertyValueFactory<>("Name"));
         Amount.setCellValueFactory(new PropertyValueFactory<>("Amount"));
         Price.setCellValueFactory(new PropertyValueFactory<>("Price"));
@@ -48,17 +60,10 @@ public class CartController {
     }
 
     public void back() {
-        Main.OpenScene("../../View/GUI/MainMenu.fxml", "Главная", null);
+        Main.OpenScene("../../View/GUI/MainMenuGUI.fxml", "Главная", null);
     }
 
     private void UpdateTableData() {
-        Cart cart = null;
-        try {
-            cart = Client.getInstance().getCart();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         assert cart != null;
         ObservableList<ProductAmount> observableList = FXCollections.observableList(cart.getProducts());
         table.setItems(observableList);
@@ -77,16 +82,40 @@ public class CartController {
         if(amount > 0 && selected != null)
         {
             selected.setAmount(amount);
-            UpdateTableData();
+            table.refresh();
         }
     }
 
-    public void delete() {
+    public void delete() { cart.getProducts().remove(selected); }
+
+    public void AcceptOrder( )
+    {
+        if(cart.isEmpty())
+        {
+            Alert empty = new Alert(Alert.AlertType.ERROR, "Корзина пуста");
+            empty.showAndWait();
+            return;
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        ArrayList<Order_Product> order_products = new ArrayList<>();
+        for (ProductAmount pa :
+                cart.getProducts()) {
+            order_products.add(new Order_Product(0, null, pa.getProduct().getId(), pa.getProduct(), pa.getAmount()));
+        }
+        Order order = new Order(0, null, cart.getTotalPrice(), customer, order_products, null);
+        String orderJson = null;
         try {
-            Client.getInstance().getCart().getProducts().remove(selected);
+            orderJson = mapper.writeValueAsString(order);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        Message<Order> msg = new Message<>("CREATE", Order.class, orderJson);
+        try {
+            System.out.println(msg.getObject());
+            Message res = Client.getInstance().Send(msg);
+            System.out.println(res.getObject());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        UpdateTableData();
     }
 }

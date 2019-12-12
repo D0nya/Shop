@@ -10,6 +10,12 @@ public class Category_Product
     private int ProductId;
     private Product product;
 
+    public Category_Product(int categoryId, int productId)
+    {
+        CategoryId = categoryId;
+        ProductId = productId;
+    }
+
     public int getCategoryId()
     {
         return CategoryId;
@@ -49,4 +55,5 @@ public class Category_Product
     {
         this.product = product;
     }
+
 }

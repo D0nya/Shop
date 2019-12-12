@@ -9,6 +9,20 @@ public class Order_Product
 
     private int productId;
     private Product product;
+    private int amount;
+
+    public Order_Product()
+    {
+
+    }
+
+    public Order_Product(int orderId, Order order, int productId, Product product, int amount) {
+        this.orderId = orderId;
+        this.order = order;
+        this.productId = productId;
+        this.product = product;
+        this.amount = amount;
+    }
 
     public int getOrderId()
     {
@@ -48,5 +62,13 @@ public class Order_Product
     public void setProduct(Product product)
     {
         this.product = product;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

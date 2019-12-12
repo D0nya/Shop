@@ -1,11 +1,14 @@
 package Shop.BLL;
 
 import Shop.BLL.Interfaces.IService;
+import Shop.BLL.Services.OrderService;
 import Shop.BLL.Services.ProductService;
 import Shop.BLL.Services.UserService;
 import Shop.DAL.Interfaces.IUnitOfWork;
+import Shop.DAL.Models.Order;
 import Shop.DAL.Models.Product;
 import Shop.DAL.Models.User;
+import Shop.DAL.Repositories.OrderRepository;
 import Shop.DAL.UnitOfWork;
 import Shop.Infrastructure.Models.Message;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -25,6 +28,7 @@ public class Handler
         serviceDictionary = new Hashtable<>();
         serviceDictionary.put(User.class, new UserService(unitOfWork.getUsers(), unitOfWork.getCustomers()));
         serviceDictionary.put(Product.class, new ProductService(unitOfWork.getProducts()));
+        serviceDictionary.put(Order.class, new OrderService(unitOfWork.getOrders()));
     }
 
     public Message Handle(Message message) throws SQLException, JsonProcessingException

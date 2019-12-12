@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shop.View.Controllers.MainMenu">
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shop.View.Controllers.MainMenuController">
     <Button onMouseClicked="#products" layoutX="195.0" layoutY="80.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Поиск товаров">
         <font>
           <Font size="14.0" />

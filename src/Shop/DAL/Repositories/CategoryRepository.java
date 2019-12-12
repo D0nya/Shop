@@ -17,7 +17,7 @@ public class CategoryRepository extends GenericRepository<Category> implements I
     @Override
     public void Create(Category item) throws SQLException
     {
-        query = "INSERT INTO " + dbSet + " (CategoryName, CategoryDescription) VALUES + (?, ?)";
+        query = "INSERT INTO " + dbSet + " (CategoryName, CategoryDescription) VALUES (?, ?)";
         PreparedStatement ps = db.prepareStatement(query);
         ps.setString(1, item.getName());
         ps.setString(2, item.getDescription());

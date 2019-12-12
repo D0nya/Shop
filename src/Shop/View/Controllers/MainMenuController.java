@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class MainMenu
+public class MainMenuController
 {
     public Button Management;
 
@@ -21,11 +21,6 @@ public class MainMenu
                 Management.setVisible(true);
             else
                 Management.setVisible(false);
-            ObjectMapper mapper = new ObjectMapper();
-            Cart cart = mapper.readValue(new FileInputStream("cart.json"), Cart.class);
-            if(cart != null)
-                Client.getInstance().setCart(cart);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,6 +43,6 @@ public class MainMenu
 
     public void products()
     {
-        Main.OpenScene("../../View/GUI/ProductsList.fxml", "Продукты", null);
+        Main.OpenScene("../../View/GUI/ProductsListGUI.fxml", "Продукты", null);
     }
 }

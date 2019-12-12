@@ -18,7 +18,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.util.List;
 
-public class ProductsList
+public class ProductsListController
 {
 
     public TextField search;
@@ -104,6 +104,6 @@ public class ProductsList
 
     public void back()
     {
-        Main.OpenScene("../../View/GUI/MainMenu.fxml", "Главная", null);
+        Main.OpenScene("../../View/GUI/MainMenuGUI.fxml", "Главная", null);
     }
 }

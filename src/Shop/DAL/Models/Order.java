@@ -1,5 +1,6 @@
 package Shop.DAL.Models;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class Order
@@ -8,20 +9,23 @@ public class Order
     private Customer customer;
     private String status;
     private double totalPrice;
-    private ArrayList<Category_Product> products;
+
+    private Date datetime;
+    private ArrayList<Order_Product> products;
 
     public Order()
     {
 
     }
 
-    public Order(int id, String status, double totalPrice, Customer customer, ArrayList<Category_Product> products)
+    public Order(int id, String status, double totalPrice, Customer customer, ArrayList<Order_Product> products, Date date)
     {
         this.id = id;
         this.customer = customer;
         this.status = status;
         this.totalPrice = totalPrice;
         this.products = products;
+        this.datetime = date;
     }
 
     public int getId()
@@ -64,13 +68,26 @@ public class Order
         this.totalPrice = totalPrice;
     }
 
-    public ArrayList<Category_Product> getProducts()
+    public Date getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(Date datetime) {
+        this.datetime = datetime;
+    }
+
+    public ArrayList<Order_Product> getProducts()
     {
         return products;
     }
 
-    public void setProducts(ArrayList<Category_Product> products)
+    public void setProducts(ArrayList<Order_Product> products)
     {
         this.products = products;
+    }
+
+    @Override
+    public String toString() {
+        return "Заказ номер " + id + "  -   {" + datetime + "}  -   Сумма: " + totalPrice + "$  -   Статус: " + status;
     }
 }

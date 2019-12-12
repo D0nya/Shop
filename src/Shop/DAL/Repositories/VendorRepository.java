@@ -20,7 +20,7 @@ public class VendorRepository extends GenericRepository<Vendor> implements IVend
     @Override
     public void Create(Vendor item) throws SQLException
     {
-        query = "INSERT INTO " + dbSet + " (VendorName, Email, PhoneNumber, Country) VALUES + (?, ?, ?, ?)";
+        query = "INSERT INTO " + dbSet + " (VendorName, Email, PhoneNumber, Country) VALUES (?, ?, ?, ?)";
         PreparedStatement ps = db.prepareStatement(query);
         ps.setString(1, item.getName());
         ps.setString(2, item.getEmail());

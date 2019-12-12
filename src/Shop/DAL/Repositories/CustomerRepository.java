@@ -44,7 +44,7 @@ public class CustomerRepository extends GenericRepository<Customer> implements I
     {
         query = "INSERT INTO " + dbSet + " (UserId, customerName, PhoneNumber) VALUES (?,?,?)";
         PreparedStatement ps = db.prepareStatement(query);
-        ps.setInt(1, item.getId());
+        ps.setInt(1, item.getUser().getId());
         ps.setString(2, item.getName());
         ps.setString(3, item.getPhoneNumber());
         ps.executeUpdate();

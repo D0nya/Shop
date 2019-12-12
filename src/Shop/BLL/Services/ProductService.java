@@ -33,8 +33,9 @@ public class ProductService implements IService
                 return GetAllProducts();
             case "FIND":
                 return FindProducts(product);
+            default:
+                return new Message<>("ERROR", String.class, "Операция не найдена");
         }
-        return null;
     }
 
     private Message FindProducts(Product product) throws SQLException, JsonProcessingException {
