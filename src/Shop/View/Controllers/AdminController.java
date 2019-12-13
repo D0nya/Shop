@@ -13,6 +13,8 @@ import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Side;
+import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -36,6 +38,9 @@ public class AdminController
     public TableColumn<Order, String> orderCustomerName;
     public TableColumn<Order, String> orderCustomerMail;
     public TableColumn<Order, String> orderStatus;
+    public LineChart<String, Double> lineChart;
+    public NumberAxis yAxis;
+    public CategoryAxis xAxis;
 
     @FXML
     public void initialize()
@@ -60,6 +65,19 @@ public class AdminController
 
         CreateUsersCMAndHandlers();
         CreateOrdersCMAndHandlers();
+
+        lineChart.setTitle("Статистика заказов");
+        lineChart.setLegendSide(Side.LEFT);
+        xAxis.setLabel("Дата");
+        yAxis.setLabel("Сумма");
+
+        XYChart.Series<String, Double> series = new XYChart.Series<>();
+        series.setName("Статистка покупок");
+        for (Order o : ordersList)
+        {
+            series.getData().add(new XYChart.Data<>(o.getDatetime().toString(), o.getTotalPrice()));
+        }
+        lineChart.getData().add(series);
     }
 
     public void Back()
