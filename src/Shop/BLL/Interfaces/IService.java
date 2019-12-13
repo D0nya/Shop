@@ -7,5 +7,5 @@ import java.sql.SQLException;
 
 public interface IService
 {
-    Message Execute(String command, String objectJson) throws SQLException, JsonProcessingException;
+    Message Execute(String command, String objectJson, Class type) throws SQLException, JsonProcessingException;
 }

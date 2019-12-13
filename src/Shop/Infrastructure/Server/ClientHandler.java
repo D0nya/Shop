@@ -1,6 +1,8 @@
 package Shop.Infrastructure.Server;
 
 import Shop.BLL.Handler;
+import Shop.DAL.Models.Customer;
+import Shop.DAL.Models.Product;
 import Shop.Infrastructure.Models.Message;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,8 +20,10 @@ public class ClientHandler extends Thread
     private final DataOutputStream output;
     private final Socket client;
     private final Handler requestHandler;
+    private LogService logService;
+    private Customer current;
 
-    ClientHandler(Socket s, Connection db) throws IOException, SQLException
+    ClientHandler(Socket s, Connection db) throws IOException
     {
         client = s;
         input = new DataInputStream(s.getInputStream());
@@ -41,11 +45,25 @@ public class ClientHandler extends Thread
                 Message message = mapper.readValue(request, Message.class);
                 if(message.getHead().equals("EXIT"))
                 {
-                    System.out.println("Клиент " + client.getInetAddress() + ":" + client.getPort() + " вышел.");
+                    if(logService != null)
+                    {
+                        logService.AddLog("Пользователь вышел");
+                        logService.Save();
+                    }
+                    else
+                        System.out.println("Пользователь вышел");
                     client.close();
                     return;
                 }
-                response = mapper.writeValueAsString(requestHandler.Handle(message));
+                LogHandler(message);
+                Message handledMessage = requestHandler.Handle(message);
+                response = mapper.writeValueAsString(handledMessage);
+                if(message.getHead().equals("LOGIN"))
+                {
+                    current = mapper.readValue(handledMessage.getObject(), Customer.class);
+                    logService = new LogService(current, client);
+                    logService.AddLog("Пользователь вошел в систему");
+                }
             }
             catch (IOException | SQLException | ClassCastException e)
             {
@@ -69,6 +87,24 @@ public class ClientHandler extends Thread
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    private void LogHandler(Message msg) throws JsonProcessingException
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        switch (msg.getHead())
+        {
+            case "GETCUSTOMERORDERS":
+                logService.AddLog("Пользователь просматривает заказы");
+                break;
+            case "GETALL":
+                logService.AddLog("Пользователь просматривает список товаров");
+                break;
+            case "FIND":
+                Product product = mapper.readValue(msg.getObject(), Product.class);
+                logService.AddLog("Пользователь ищет товары. Строка поиска: '" + product.getName() + "'");
+                break;
         }
     }
 }

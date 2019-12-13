@@ -2,8 +2,6 @@ package Shop.Infrastructure.Client;
 
 import Shop.DAL.Models.Cart;
 import Shop.DAL.Models.Customer;
-import Shop.DAL.Models.Product;
-import Shop.DAL.Models.ProductAmount;
 import Shop.Infrastructure.Models.Message;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

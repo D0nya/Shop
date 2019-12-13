@@ -6,7 +6,6 @@ import Shop.DAL.Models.Product;
 import Shop.Infrastructure.Models.Message;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mysql.cj.protocol.x.XMessage;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,7 +23,7 @@ public class ProductService implements IService
     }
 
     @Override
-    public Message Execute(String command, String objectJson) throws SQLException, JsonProcessingException
+    public Message Execute(String command, String objectJson, Class type) throws SQLException, JsonProcessingException
     {
         Product product = objectMapper.readValue(objectJson, Product.class);
         switch(command)

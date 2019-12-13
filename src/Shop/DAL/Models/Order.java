@@ -1,5 +1,7 @@
 package Shop.DAL.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -32,7 +34,6 @@ public class Order
     {
         return id;
     }
-
     public void setId(int id)
     {
         this.id = id;
@@ -42,7 +43,6 @@ public class Order
     {
         return customer;
     }
-
     public void setCustomer(Customer customer)
     {
         this.customer = customer;
@@ -52,7 +52,6 @@ public class Order
     {
         return status;
     }
-
     public void setStatus(String status)
     {
         this.status = status;
@@ -62,7 +61,6 @@ public class Order
     {
         return totalPrice;
     }
-
     public void setTotalPrice(double totalPrice)
     {
         this.totalPrice = totalPrice;
@@ -71,7 +69,6 @@ public class Order
     public Date getDatetime() {
         return datetime;
     }
-
     public void setDatetime(Date datetime) {
         this.datetime = datetime;
     }
@@ -80,11 +77,15 @@ public class Order
     {
         return products;
     }
-
     public void setProducts(ArrayList<Order_Product> products)
     {
         this.products = products;
     }
+
+    @JsonIgnore
+    public String getCustomerName(){return customer.getName();}
+    @JsonIgnore
+    public String getCustomerEmail(){return customer.getEmail();}
 
     @Override
     public String toString() {

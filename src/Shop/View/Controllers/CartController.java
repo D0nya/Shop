@@ -83,10 +83,15 @@ public class CartController {
         {
             selected.setAmount(amount);
             table.refresh();
+            totalPriceLabel.setText(String.valueOf(cart.getTotalPrice()));
         }
     }
 
-    public void delete() { cart.getProducts().remove(selected); }
+    public void delete()
+    {
+        cart.getProducts().remove(selected);
+        totalPriceLabel.setText(String.valueOf(cart.getTotalPrice()));
+    }
 
     public void AcceptOrder( )
     {
@@ -117,5 +122,6 @@ public class CartController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        cart.getProducts().clear();
     }
 }

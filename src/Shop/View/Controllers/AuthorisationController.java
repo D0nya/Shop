@@ -6,10 +6,12 @@ import Shop.Infrastructure.Client.Client;
 import Shop.Infrastructure.Client.Main;
 import Shop.Infrastructure.Models.Message;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.Base64;
 
 public class AuthorisationController
 {
@@ -23,7 +25,8 @@ public class AuthorisationController
         User user;
         try
         {
-            user = new User(0, login.getText(), password.getText(), "", null);
+            String encodedPass = Base64.getEncoder().encodeToString(password.getText().getBytes());
+            user = new User(0, login.getText(), encodedPass, "", null);
         } catch (Exception e)
         {
             e.printStackTrace();
@@ -39,6 +42,12 @@ public class AuthorisationController
         {
             Customer customer = mapper.readValue(responseMessage.getObject(), Customer.class);
             Client.getInstance().setCustomer(customer);
+            if(customer.getRole().equals("blocked"))
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Пользователь заблокирован.");
+                alert.showAndWait();
+                return;
+            }
             Main.OpenScene("../../View/GUI/MainMenuGUI.fxml", "Главная", null);
         }
     }

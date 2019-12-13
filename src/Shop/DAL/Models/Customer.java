@@ -1,5 +1,7 @@
 package Shop.DAL.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Customer
 {
     private int id;
@@ -23,7 +25,6 @@ public class Customer
     {
         return id;
     }
-
     public void setId(int id)
     {
         this.id = id;
@@ -33,7 +34,6 @@ public class Customer
     {
         return name;
     }
-
     public void setName(String name)
     {
         this.name = name;
@@ -43,7 +43,6 @@ public class Customer
     {
         return phoneNumber;
     }
-
     public void setPhoneNumber(String phoneNumber)
     {
         this.phoneNumber = phoneNumber;
@@ -53,9 +52,15 @@ public class Customer
     {
         return user;
     }
-
     public void setUser(User user)
     {
         this.user = user;
     }
+
+    @JsonIgnore
+    public String getRole(){return user.getRole().getName();}
+    @JsonIgnore
+    public String getLogin(){return user.getLogin();}
+    @JsonIgnore
+    public String getEmail(){return user.getEmail();}
 }

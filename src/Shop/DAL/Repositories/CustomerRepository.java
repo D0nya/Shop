@@ -31,7 +31,7 @@ public class CustomerRepository extends GenericRepository<Customer> implements I
     @Override
     public ResultSet GetAll() throws SQLException
     {
-        query = "select customerId, customers   .customerName, users.userId, users.login, users.password, users.email, roles.roleId, roles.name " +
+        query = "select customerId, customers.customerName, customers.phoneNumber, users.userId, users.login, users.password, users.email, roles.roleId, roles.name " +
                 "from " + dbSet +
                 " inner join users on users.userId = customers.userID" +
                 " inner join roles on roles.roleId = users.roleId";
@@ -64,7 +64,6 @@ public class CustomerRepository extends GenericRepository<Customer> implements I
     @Override
     public List<Customer> ProcessData(ResultSet result) throws SQLException
     {
-
         List<Customer> data = new ArrayList<>();
         while(result.next())
         {
@@ -73,5 +72,28 @@ public class CustomerRepository extends GenericRepository<Customer> implements I
                             new Role(result.getInt(8), result.getString(9)))));
         }
         return data;
+    }
+
+    @Override
+    public void Register(Customer customer) throws SQLException {
+        query = "INSERT INTO shop.users (login, password, email) VALUES (?, ?, ?)";
+        PreparedStatement ps = db.prepareStatement(query);
+        ps.setString(1, customer.getUser().getLogin());
+        ps.setString(2, customer.getUser().getPassword());
+        ps.setString(3, customer.getUser().getEmail());
+        ps.executeUpdate();
+
+        query = "SELECT UserId FROM users ORDER BY UserId DESC LIMIT 1";
+        Statement st = db.createStatement();
+        ResultSet res = st.executeQuery(query);
+        res.next();
+        int id = res.getInt(1);
+
+        query = "INSERT INTO " + dbSet + " (customerName, phoneNumber, UserId) VALUES (?, ?, ?)";
+        ps = db.prepareStatement(query);
+        ps.setString(1, customer.getName());
+        ps.setString(2, customer.getPhoneNumber());
+        ps.setInt(3, id);
+        ps.executeUpdate();
     }
 }

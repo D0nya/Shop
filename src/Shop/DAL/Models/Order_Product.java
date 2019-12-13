@@ -1,7 +1,5 @@
 package Shop.DAL.Models;
 
-import Shop.DAL.Repositories.CustomerRepository;
-
 public class Order_Product
 {
     private int orderId;

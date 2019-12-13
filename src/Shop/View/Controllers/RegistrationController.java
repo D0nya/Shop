@@ -1,5 +1,6 @@
 package Shop.View.Controllers;
 
+import Shop.DAL.Models.Customer;
 import Shop.DAL.Models.Role;
 import Shop.DAL.Models.User;
 import Shop.Infrastructure.Client.Client;
@@ -10,8 +11,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import sun.misc.BASE64Decoder;
 
 import java.io.IOException;
+import java.util.Base64;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -57,19 +60,20 @@ public class RegistrationController
         }
         ErrorField.setText("");
 
-        User newUser;
+        Customer customer;
         try
         {
-            newUser = new User(0, login.getText(), password.getText(), email.getText(), new Role(2, "user"));
+            String encodedPass = Base64.getEncoder().encodeToString(password.getText().getBytes());
+            customer = new Customer(0, name.getText(), "+" + phoneNum.getText(),
+                    new User(0, login.getText(), encodedPass, email.getText(), new Role(2, "user")));
         } catch (Exception e)
         {
             e.printStackTrace();
-            ErrorField.setText("Ошибка шифрования");
             return;
         }
 
-        String userJson = mapper.writeValueAsString(newUser);
-        Message msg = new Message<>("REGISTER", User.class, userJson);
+        String userJson = mapper.writeValueAsString(customer);
+        Message msg = new Message<>("REGISTER", Customer.class, userJson);
         msg = Client.getInstance().Send(msg);
         if(msg.getHead().equals("SUCCESS"))
         {

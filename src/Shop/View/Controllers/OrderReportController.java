@@ -42,8 +42,7 @@ public class OrderReportController
 
     public void SetOrder(Order o)
     {
-        if(o == null)
-            Back();
+        assert o != null;
         System.out.println(o.getProducts().size());
         reportText =
                 "           Заказ номер " + o.getId() + "\n" +

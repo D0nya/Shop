@@ -26,18 +26,45 @@ public class UserService implements IService
     }
 
     @Override
-    public Message Execute(String command, String objectJson) throws SQLException, JsonProcessingException
+    public Message Execute(String command, String objectJson, Class type) throws SQLException, JsonProcessingException
     {
-        User object = mapper.readValue(objectJson, User.class);
+        User object = null;
+        Customer customer = null;
+        if(objectJson != null)
+        {
+            if(type == User.class)
+                object = mapper.readValue(objectJson, User.class);
+            else if (type == Customer.class)
+                customer = mapper.readValue(objectJson, Customer.class);
+        }
+
         switch (command)
         {
             case "LOGIN":
                 return Login(object);
             case "REGISTER":
-                return Register(object);
+                return Register(customer);
+            case "GETCUSTOMERS":
+                return GetAllCustomers();
+            case "CHANGEROLE":
+                return ChangeRole(object);
             default:
                 return new Message<>("ERROR", String.class, "Операция не найдена");
         }
+    }
+
+    private Message ChangeRole(User object) throws SQLException
+    {
+        userRepository.Update(object);
+        return new Message("SUCCESS", String.class, "Пользователь успешно изменен");
+    }
+
+    private Message GetAllCustomers() throws SQLException, JsonProcessingException
+    {
+        ResultSet res = customerRepository.GetAll();
+        List<Customer> customers = customerRepository.ProcessData(res);
+        String customersJson = mapper.writeValueAsString(customers);
+        return new Message("SUCCESS", List.class, customersJson);
     }
 
     private Message Login(User u) throws SQLException, JsonProcessingException
@@ -56,11 +83,11 @@ public class UserService implements IService
         String customerJson = mapper.writeValueAsString(customer);
         return new Message<>("SUCCESS", Customer.class, customerJson);
     }
-    private Message Register(User u)
+    private Message Register(Customer c)
     {
         try
         {
-            userRepository.Create(u);
+            customerRepository.Register(c);
         } catch (SQLException e)
         {
             e.printStackTrace();

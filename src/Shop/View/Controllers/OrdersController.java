@@ -27,7 +27,7 @@ public class OrdersController
     @FXML
     public void initialize() {
         try {
-            ObservableList<Order> orders = FXCollections.observableList(GetData("GETCUSTOMERSORDERS",
+            ObservableList<Order> orders = FXCollections.observableList(GetData(
                     new Order(0, null, 0, Client.getInstance().getCustomer(), null, null)));
             listView.setItems(orders);
         } catch (IOException e) {
@@ -43,13 +43,13 @@ public class OrdersController
         Main.OpenScene("../../View/GUI/MainMenuGUI.fxml", "Главная", null);
     }
 
-    private List<Order> GetData(String operation, Order order) {
+    private List<Order> GetData(Order order) {
         ObjectMapper mapper = new ObjectMapper();
         List<Order> list = null;
         try
         {
             String orderJson = mapper.writeValueAsString(order);
-            Message msg = new Message<>(operation, Order.class, orderJson);
+            Message msg = new Message<>("GETCUSTOMERSORDERS", Order.class, orderJson);
             msg = Client.getInstance().Send(msg);
             list = mapper.readValue(msg.getObject(), new TypeReference<List<Order>>() {
             });

@@ -53,7 +53,7 @@ public class Message<T>
     public String toString()
     {
         ObjectMapper objectMapper = new ObjectMapper();
-        String jsonMessage = null;
+        String jsonMessage;
         try
         {
             jsonMessage = objectMapper.writeValueAsString(this);

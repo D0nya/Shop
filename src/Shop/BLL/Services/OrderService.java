@@ -22,8 +22,10 @@ public class OrderService implements IService
     }
 
     @Override
-    public Message Execute(String command, String objectJson) throws SQLException, JsonProcessingException {
-        Order order = mapper.readValue(objectJson, Order.class);
+    public Message Execute(String command, String objectJson, Class type) throws SQLException, JsonProcessingException {
+        Order order = null;
+        if(objectJson != null)
+            order = mapper.readValue(objectJson, Order.class);
         switch (command)
         {
             case "GETCUSTOMERSORDERS":
@@ -32,9 +34,17 @@ public class OrderService implements IService
                 return GetAllOrders();
             case "CREATE":
                 return CreateOrder(order);
+            case "UPDATE":
+                    return UpdateOrder(order);
             default:
                 return new Message<>("ERROR", String.class, "Операция не найдена");
         }
+    }
+
+    private Message UpdateOrder(Order order) throws SQLException
+    {
+        orderRepository.Update(order);
+        return new Message<>("SUCCESS", String.class, "Заказ успешно обновлен");
     }
 
     private Message<String> CreateOrder(Order order) throws SQLException

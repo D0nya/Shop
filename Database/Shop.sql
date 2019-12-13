@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `shop`.`users` (
     FOREIGN KEY (`RoleId`)
     REFERENCES `shop`.`roles` (`RoleId`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
+AUTO_INCREMENT = 9
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `shop`.`customers` (
     FOREIGN KEY (`UserId`)
     REFERENCES `shop`.`users` (`UserId`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `shop`.`orders` (
     FOREIGN KEY (`CustomerId`)
     REFERENCES `shop`.`customers` (`CustomerId`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -168,6 +168,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `shop`.`order_product` (
   `OrderId` INT(11) NOT NULL,
   `ProductId` INT(11) NOT NULL,
+  `Amount` INT(11) NOT NULL,
   PRIMARY KEY (`OrderId`, `ProductId`),
   INDEX `ProductId` (`ProductId` ASC) VISIBLE,
   CONSTRAINT `order_product_ibfk_1`
@@ -188,3 +189,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO Roles VALUES (1, "admin");
+INSERT INTO Roles VALUES (2, "user");
+INSERT INTO Roles VALUES (3, "blocked");

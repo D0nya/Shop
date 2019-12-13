@@ -46,7 +46,7 @@ public class UserRepository extends GenericRepository<User> implements IUserRepo
     @Override
     public void Update(User item) throws SQLException
     {
-        query = "UPDATE " + dbSet + " SET login = ?, password = ? email = ?, roleId = ? WHERE UserId = " + item.getId();
+        query = "UPDATE " + dbSet + " SET login = ?, password = ?, email = ?, roleId = ? WHERE UserId = " + item.getId();
         PreparedStatement ps = db.prepareStatement(query);
         ps.setString(1, item.getLogin());
         ps.setString(2, item.getPassword());

@@ -3,8 +3,9 @@ package Shop.DAL.DB;
 import Shop.DAL.Models.*;
 import Shop.DAL.UnitOfWork;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DbContext
 {
